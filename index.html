@@ -704,7 +704,50 @@
                                 <i class="fas fa-eye"></i>
                                 View Details
                             </button>
-                            <a href="Daily_Motivation_Case_Study.pdf" target="_blank" class="btn btn-outline">
+                            <a href="case-studies/Daily_Motivation_Case_Study.pdf" target="_blank" class="btn btn-outline">
+                                <i class="fas fa-download"></i>
+                                Download PDF
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Case Study 2: Schedule Optimizer -->
+                <div class="case-study-card">
+                    <div class="case-study-header">
+                        <h3 class="case-study-title">Daily Schedule Optimizer</h3>
+                        <p class="case-study-subtitle">AI-Powered Calendar Integration</p>
+                    </div>
+                    <div class="case-study-content">
+                        <p class="case-study-description">
+                            Automated daily schedule creation combining Google Calendar events with recurring tasks using Python preprocessing, ChatGPT optimization, and HTML email delivery.
+                        </p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Pipedream</span>
+                            <span class="tech-tag">Python</span>
+                            <span class="tech-tag">OpenAI API</span>
+                            <span class="tech-tag">Google Calendar</span>
+                        </div>
+                        <div class="case-study-metrics">
+                            <div class="metric">
+                                <span class="metric-value">100%</span>
+                                <div class="metric-label">Daily Success</div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">15min</span>
+                                <div class="metric-label">Time Saved</div>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">7</span>
+                                <div class="metric-label">Integrations</div>
+                            </div>
+                        </div>
+                        <div class="case-study-actions">
+                            <button class="btn btn-primary" onclick="openCaseStudy('schedule-optimizer')">
+                                <i class="fas fa-eye"></i>
+                                View Details
+                            </button>
+                            <a href="case-studies/Daily_Schedule_Optimizer_Case_Study.pdf" target="_blank" class="btn btn-outline">
                                 <i class="fas fa-download"></i>
                                 Download PDF
                             </a>
@@ -815,26 +858,31 @@
 
         // Case Study Modal Functions
         function openCaseStudy(caseId) {
-            const modal = document.getElementById('case-study-modal');
-            const iframe = document.getElementById('case-study-iframe');
-            const title = document.getElementById('modal-title');
-            const subtitle = document.getElementById('modal-subtitle');
-            
-            switch(caseId) {
-                case 'motivation-email':
-                    title.textContent = 'Daily Motivation Email Automation';
-                    subtitle.textContent = 'Serverless Workflow Implementation';
-                    iframe.src = 'Daily_Motivation_Case_Study.pdf';
-                    break;
-                default:
-                    title.textContent = 'Case Study';
-                    subtitle.textContent = 'Detailed Analysis';
-                    break;
-            }
-            
-            modal.style.display = 'block';
-            document.body.style.overflow = 'hidden';
-        }
+    const modal = document.getElementById('case-study-modal');
+    const iframe = document.getElementById('case-study-iframe');
+    const title = document.getElementById('modal-title');
+    const subtitle = document.getElementById('modal-subtitle');
+    
+    switch(caseId) {
+        case 'motivation-email':
+            title.textContent = 'Daily Motivation Email Automation';
+            subtitle.textContent = 'Serverless Workflow Implementation';
+            iframe.src = 'case-studies/Daily_Motivation_Case_Study.pdf';
+            break;
+        case 'schedule-optimizer':
+            title.textContent = 'Daily Schedule Optimizer';
+            subtitle.textContent = 'AI-Powered Calendar Integration';
+            iframe.src = 'case-studies/Daily_Schedule_Optimizer_Case_Study.pdf';
+            break;
+        default:
+            title.textContent = 'Case Study';
+            subtitle.textContent = 'Detailed Analysis';
+            break;
+    }
+    
+    modal.style.display = 'block';
+    document.body.style.overflow = 'hidden';
+}
 
         function closeCaseStudy() {
             const modal = document.getElementById('case-study-modal');
