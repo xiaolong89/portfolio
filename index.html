@@ -818,7 +818,7 @@
                 <p id="modal-subtitle">Detailed breakdown and analysis</p>
             </div>
             <div class="modal-body">
-                <iframe id="case-study-iframe" src="" style="width: 100%; height: 600px; border: none; border-radius: 8px;"></iframe>
+                <iframe id="case-study-iframe" src="" style="width: 100%; height: 600px; border: none; border-radius: 8px;" allow="fullscreen"></iframe>
             </div>
         </div>
     </div>
@@ -858,26 +858,26 @@
 
         // Case Study Modal Functions
         function openCaseStudy(caseId) {
-    const modal = document.getElementById('case-study-modal');
-    const iframe = document.getElementById('case-study-iframe');
-    const title = document.getElementById('modal-title');
-    const subtitle = document.getElementById('modal-subtitle');
-    
-    switch(caseId) {
-        case 'motivation-email':
-            title.textContent = 'Daily Motivation Email Automation';
-            subtitle.textContent = 'Serverless Workflow Implementation';
-            iframe.src = 'https://raw.githubusercontent.com/xiaolong89/portfolio/main/case%20studies/Daily_Motivation_Case_Study.pdf';
-            break;
-        case 'schedule-optimizer':
-            title.textContent = 'Daily Schedule Optimizer';
-            subtitle.textContent = 'AI-Powered Calendar Integration';
-            iframe.src = 'https://raw.githubusercontent.com/xiaolong89/portfolio/main/case%20studies/Daily_Schedule_Optimizer_Case_Study.pdf';
-            break;
-        default:
-            title.textContent = 'Case Study';
-            subtitle.textContent = 'Detailed Analysis';
-            break;
+            const modal = document.getElementById('case-study-modal');
+            const iframe = document.getElementById('case-study-iframe');
+            const title = document.getElementById('modal-title');
+            const subtitle = document.getElementById('modal-subtitle');
+            
+            switch(caseId) {
+                case 'motivation-email':
+                    title.textContent = 'Daily Motivation Email Automation';
+                    subtitle.textContent = 'Serverless Workflow Implementation';
+                    iframe.src = `https://mozilla.github.io/pdf.js/web/viewer.html?file=${encodeURIComponent('https://raw.githubusercontent.com/xiaolong89/portfolio/main/case%20studies/Daily_Motivation_Case_Study.pdf')}`;
+                    break;
+                case 'schedule-optimizer':
+                    title.textContent = 'Daily Schedule Optimizer';
+                    subtitle.textContent = 'AI-Powered Calendar Integration';
+                    iframe.src = `https://mozilla.github.io/pdf.js/web/viewer.html?file=${encodeURIComponent('https://raw.githubusercontent.com/xiaolong89/portfolio/main/case%20studies/Daily_Schedule_Optimizer_Case_Study.pdf')}`;
+                    break;
+                default:
+                    title.textContent = 'Case Study';
+                    subtitle.textContent = 'Detailed Analysis';
+                    break;
     }
     
     modal.style.display = 'block';
