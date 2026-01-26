@@ -3,930 +3,968 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Corbin Bridge - Strategic Operations Analyst</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>AI-Augmented Operational Improvement | Corbin Bridge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700&family=DM+Serif+Display&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --navy: #1e3a5f;
+            --navy-dark: #152a45;
+            --slate: #475569;
+            --accent: #0ea5e9;
+            --accent-light: #38bdf8;
+            --light-gray: #f1f5f9;
+            --medium-gray: #94a3b8;
+            --text-dark: #1e293b;
+            --white: #ffffff;
+            --success: #10b981;
+        }
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        :root {
-            --primary-color: #2c5282;
-            --secondary-color: #3182ce;
-            --accent-color: #4299e1;
-            --text-dark: #2d3748;
-            --text-light: #4a5568;
-            --bg-light: #f7fafc;
-            --bg-white: #ffffff;
-            --border-color: #e2e8f0;
-            --success-color: #38a169;
-            --warning-color: #ed8936;
-        }
-
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--light-gray);
             color: var(--text-dark);
-            background: var(--bg-light);
+            line-height: 1.6;
         }
 
-        /* Header & Navigation */
+        /* Header */
         .header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 1rem 2rem;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: white;
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s ease;
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+            color: var(--white);
+            padding: 4rem 2rem 3rem;
             position: relative;
+            overflow: hidden;
         }
 
-        .nav-links a:hover {
-            color: #bee3f8;
-        }
-
-        .nav-links a::after {
+        .header::before {
             content: '';
             position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #bee3f8;
-            transition: width 0.3s ease;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: radial-gradient(circle at 70% 30%, rgba(14, 165, 233, 0.15) 0%, transparent 60%);
         }
 
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-
-        .hero-container {
-            max-width: 1200px;
+        .header-content {
+            max-width: 900px;
             margin: 0 auto;
+            position: relative;
+            z-index: 1;
         }
 
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .hero .subtitle {
-            font-size: 1.4rem;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-            font-weight: 300;
-        }
-
-        .hero .description {
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto 2rem;
-            opacity: 0.85;
-            line-height: 1.7;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .social-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
+        .badge {
+            display: inline-block;
             background: rgba(255,255,255,0.1);
-            padding: 0.75rem 1.5rem;
-            border-radius: 50px;
-            color: white;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 0.4rem 1rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
         }
 
-        .social-link:hover {
-            background: rgba(255,255,255,0.2);
-            transform: translateY(-2px);
+        h1 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 0.75rem;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            color: var(--medium-gray);
+            margin-bottom: 2rem;
+        }
+
+        .author-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .author-info a {
+            color: var(--accent-light);
+            text-decoration: none;
+        }
+
+        .author-info a:hover {
+            text-decoration: underline;
         }
 
         /* Main Content */
-        .container {
-            max-width: 1200px;
+        main {
+            max-width: 900px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 2rem;
         }
 
-        .section {
-            margin: 4rem 0;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: var(--primary-color);
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: var(--accent-color);
-            border-radius: 2px;
-        }
-
-        /* Case Studies Grid */
-        .case-studies-grid {
+        /* Metrics Bar */
+        .metrics-bar {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .case-study-card {
-            background: var(--bg-white);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-            transition: all 0.3s ease;
-            border: 1px solid var(--border-color);
-        }
-
-        .case-study-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
-        }
-
-        .case-study-header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 1.5rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .case-study-header::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
-        .case-study-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .case-study-subtitle {
-            opacity: 0.9;
-            font-size: 0.95rem;
-            position: relative;
-            z-index: 1;
-        }
-
-        .case-study-content {
-            padding: 1.5rem;
-        }
-
-        .case-study-description {
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-
-        .tech-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .tech-tag {
-            background: var(--bg-light);
-            color: var(--primary-color);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 500;
-            border: 1px solid var(--border-color);
-        }
-
-        .case-study-metrics {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
             gap: 1rem;
-            margin: 1.5rem 0;
-            padding: 1rem;
-            background: var(--bg-light);
-            border-radius: 8px;
+            margin: -2rem 0 2rem;
+            position: relative;
+            z-index: 10;
         }
 
-        .metric {
+        .metric-card {
+            background: var(--white);
+            border-radius: 12px;
+            padding: 1.5rem 1rem;
             text-align: center;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            border: 1px solid rgba(0,0,0,0.04);
         }
 
         .metric-value {
-            font-size: 1.8rem;
+            font-size: 2rem;
             font-weight: 700;
-            color: var(--success-color);
-            display: block;
+            color: var(--navy);
+            line-height: 1;
+            margin-bottom: 0.75rem;
         }
 
         .metric-label {
             font-size: 0.8rem;
-            color: var(--text-light);
-            margin-top: 0.25rem;
+            color: var(--slate);
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            line-height: 1.3;
         }
 
-        .case-study-actions {
-            display: flex;
-            gap: 1rem;
-            justify-content: space-between;
-            align-items: center;
+        /* Sections */
+        section {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
         }
 
-        .btn {
-            padding: 0.75rem 1.5rem;
-            border-radius: 6px;
-            text-decoration: none;
+        h2 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 1.6rem;
+            font-weight: 400;
+            color: var(--navy);
+            margin-bottom: 1rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        h3 {
+            font-size: 1rem;
             font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            border: none;
-            cursor: pointer;
+            color: var(--accent);
+            margin: 1.5rem 0 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+        }
+
+        h3:first-of-type {
+            margin-top: 0;
+        }
+
+        p {
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+
+        strong {
+            color: var(--navy);
+            font-weight: 600;
+        }
+
+        ul {
+            margin: 0.75rem 0 1rem 1.25rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            color: var(--text-dark);
+        }
+
+        /* Tables */
+        .table-wrapper {
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
             font-size: 0.9rem;
         }
 
-        .btn-primary {
-            background: var(--primary-color);
-            color: white;
+        th {
+            background: var(--navy);
+            color: var(--white);
+            padding: 0.75rem 1rem;
+            text-align: left;
+            font-weight: 600;
+            font-size: 0.85rem;
         }
 
-        .btn-primary:hover {
-            background: var(--secondary-color);
-            transform: translateY(-1px);
+        td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--light-gray);
+            vertical-align: top;
         }
 
-        .btn-outline {
-            background: transparent;
-            color: var(--primary-color);
-            border: 2px solid var(--primary-color);
+        tr:nth-child(even) {
+            background: var(--light-gray);
         }
 
-        .btn-outline:hover {
-            background: var(--primary-color);
-            color: white;
+        /* DMAIC table special styling */
+        .dmaic-table td:first-child {
+            background: var(--accent);
+            color: var(--white);
+            font-weight: 600;
+            text-align: center;
+            width: 100px;
         }
 
-        /* Modal for Case Study Details */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.8);
-            z-index: 1000;
-            backdrop-filter: blur(5px);
+        /* Project Cards */
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 1rem 0;
         }
 
-        .modal-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background: white;
+        .project-card {
+            background: var(--light-gray);
             border-radius: 12px;
-            width: 90%;
-            max-width: 900px;
-            max-height: 90vh;
-            overflow-y: auto;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            padding: 1.5rem;
+            border-left: 4px solid var(--accent);
         }
 
-        .modal-header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 2rem;
-            position: relative;
+        .project-card h4 {
+            font-size: 1.1rem;
+            color: var(--navy);
+            margin-bottom: 0.75rem;
         }
 
-        .modal-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
+        .project-card p {
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .project-metrics {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .project-metric {
+            background: var(--white);
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+        }
+
+        .project-metric strong {
+            color: var(--accent);
+        }
+
+        /* Highlight Box */
+        .highlight {
+            background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
+            color: var(--white);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .highlight p {
+            color: rgba(255,255,255,0.9);
+            margin: 0;
+        }
+
+        .highlight strong {
+            color: var(--accent-light);
+        }
+
+        /* Context Box */
+        .context-box {
+            background: var(--light-gray);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-left: 4px solid var(--navy);
+        }
+
+        .context-box h4 {
+            color: var(--navy);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            margin-bottom: 0.75rem;
+        }
+
+        .context-box ul {
+            margin: 0;
+        }
+
+        .context-box li {
+            font-size: 0.9rem;
+        }
+
+        /* Quote */
+        blockquote {
+            border-left: 4px solid var(--accent);
+            padding: 1rem 1.5rem;
+            background: var(--light-gray);
+            border-radius: 0 8px 8px 0;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: var(--slate);
+        }
+
+        /* Capability Grid */
+        .capability-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .capability-item {
+            background: var(--light-gray);
+            border-radius: 8px;
+            padding: 1rem;
+        }
+
+        .capability-item h4 {
+            font-size: 0.9rem;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
             display: flex;
             align-items: center;
+            gap: 0.5rem;
+        }
+
+        .capability-item h4::before {
+            content: '\2713';
+            display: inline-flex;
+            align-items: center;
             justify-content: center;
-            transition: background 0.3s ease;
+            width: 20px;
+            height: 20px;
+            background: var(--success);
+            color: white;
+            border-radius: 50%;
+            font-size: 0.7rem;
         }
 
-        .modal-close:hover {
-            background: rgba(255,255,255,0.2);
+        .capability-item p {
+            font-size: 0.85rem;
+            color: var(--slate);
+            margin: 0;
         }
 
-        .modal-body {
-            padding: 2rem;
-        }
-
-        /* About Section */
-        .about-grid {
+        /* Application Cards */
+        .application-grid {
             display: grid;
-            grid-template-columns: 1fr 2fr;
-            gap: 3rem;
-            align-items: start;
-            margin-top: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            margin: 1rem 0;
         }
 
-        .skills-section {
-            background: var(--bg-white);
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        .application-card {
+            background: var(--white);
+            border: 1px solid var(--light-gray);
+            border-radius: 10px;
+            padding: 1.25rem;
+            transition: box-shadow 0.2s;
         }
 
-        .skills-section h3 {
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
+        .application-card:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
 
-        .skill-category {
-            margin-bottom: 1.5rem;
-        }
-
-        .skill-category h4 {
-            color: var(--text-dark);
+        .application-card h4 {
+            font-size: 0.95rem;
+            color: var(--navy);
             margin-bottom: 0.5rem;
-            font-size: 1rem;
         }
 
-        .skill-list {
+        .application-card p {
+            font-size: 0.85rem;
+            color: var(--slate);
+            margin-bottom: 0.5rem;
+        }
+
+        .application-card .outcome {
+            font-size: 0.8rem;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* Tech Stack */
+        .tech-stack {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
+            margin: 1rem 0;
         }
 
-        .skill-item {
-            background: var(--bg-light);
-            padding: 0.4rem 0.8rem;
-            border-radius: 15px;
-            font-size: 0.85rem;
-            color: var(--text-light);
-            border: 1px solid var(--border-color);
-        }
-
-        .experience-summary {
-            background: var(--bg-white);
-            padding: 2rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-        }
-
-        .experience-summary h3 {
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
-        }
-
-        .experience-item {
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .experience-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-
-        .experience-title {
-            font-weight: 600;
-            color: var(--text-dark);
-            margin-bottom: 0.25rem;
-        }
-
-        .experience-company {
-            color: var(--primary-color);
+        .tech-tag {
+            background: var(--light-gray);
+            color: var(--slate);
+            padding: 0.4rem 0.75rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
             font-weight: 500;
+        }
+
+        /* Experience Cards */
+        .experience-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .experience-card {
+            background: var(--light-gray);
+            border-radius: 12px;
+            padding: 1.5rem;
+            border-left: 4px solid var(--navy);
+        }
+
+        .experience-card h4 {
+            font-size: 1.05rem;
+            color: var(--navy);
             margin-bottom: 0.25rem;
         }
 
-        .experience-duration {
-            color: var(--text-light);
+        .experience-card .company {
             font-size: 0.9rem;
-            margin-bottom: 0.5rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 0.25rem;
         }
 
-        .experience-description {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            line-height: 1.5;
+        .experience-card .duration {
+            font-size: 0.8rem;
+            color: var(--medium-gray);
+            margin-bottom: 0.75rem;
+        }
+
+        .experience-card p {
+            font-size: 0.9rem;
+            color: var(--slate);
+            margin: 0;
+        }
+
+        /* Skills Category */
+        .skills-category {
+            margin-bottom: 1.25rem;
+        }
+
+        .skills-category:last-child {
+            margin-bottom: 0;
+        }
+
+        .skills-category h4 {
+            font-size: 0.9rem;
+            color: var(--navy);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
         }
 
         /* Footer */
-        .footer {
-            background: var(--text-dark);
-            color: white;
-            text-align: center;
+        footer {
+            max-width: 900px;
+            margin: 0 auto;
             padding: 2rem;
-            margin-top: 4rem;
+            text-align: center;
+            color: var(--slate);
+            font-size: 0.9rem;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+        footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .header {
+                padding: 2rem 1rem;
             }
 
-            .hero h1 {
-                font-size: 2.5rem;
+            main {
+                padding: 1rem;
             }
 
-            .hero .subtitle {
-                font-size: 1.2rem;
+            section {
+                padding: 1.5rem;
             }
 
-            .case-studies-grid {
-                grid-template-columns: 1fr;
+            .metrics-bar {
+                margin: -1.5rem 0 1.5rem;
             }
 
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 2rem;
+            .metric-card {
+                padding: 1rem;
             }
 
-            .case-study-metrics {
-                grid-template-columns: 1fr;
-            }
-
-            .case-study-actions {
-                flex-direction: column;
-                align-items: stretch;
-            }
-
-            .modal-content {
-                width: 95%;
-                margin: 1rem;
-            }
-
-            .container {
-                padding: 0 1rem;
+            .metric-value {
+                font-size: 1.5rem;
             }
         }
 
-        /* Smooth Scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
+        /* Print Styles */
+        @media print {
+            body {
+                background: white;
+            }
 
-        /* Loading Animation */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
+            .header {
+                background: var(--navy);
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
 
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
+            section {
+                box-shadow: none;
+                border: 1px solid var(--light-gray);
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header class="header">
-        <nav class="nav-container">
-            <a href="#home" class="logo">Corbin Bridge</a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#case-studies">Case Studies</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="header-content">
+            <span class="badge">Strategy & Operations Case Study</span>
+            <h1>AI-Augmented Operational Improvement</h1>
+            <p class="subtitle">A Framework for Leveraging AI Within Disciplined Process Methodology</p>
+            <div class="author-info">
+                <span><strong>Corbin Bridge</strong></span>
+                <span>January 2026</span>
+                <a href="mailto:cbridge89@gmail.com">cbridge89@gmail.com</a>
+                <a href="https://linkedin.com/in/corbinbridge" target="_blank">LinkedIn</a>
+            </div>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <h1>Corbin Bridge</h1>
-            <p class="subtitle">Strategic Operations Analyst</p>
-            <p class="description">
-                Data-driven professional with expertise in financial modeling, process optimization, and strategic analysis.
-                Proven track record of transforming complex datasets into actionable insights that drive measurable business outcomes.
-            </p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/corbinbridge/" target="_blank" class="social-link">
-                    <i class="fab fa-linkedin"></i>
-                    LinkedIn
-                </a>
-                <a href="mailto:cbridge89@gmail.com" class="social-link">
-                    <i class="fas fa-envelope"></i>
-                    Email
-                </a>
+    <main>
+        <div class="metrics-bar">
+            <div class="metric-card">
+                <div class="metric-value">2</div>
+                <div class="metric-label">Production Deployments</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">100%</div>
+                <div class="metric-label">Checkpoint Success</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">0</div>
+                <div class="metric-label">Production Defects</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">50-100%</div>
+                <div class="metric-label">Under Budget</div>
             </div>
         </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title fade-in">About Me</h2>
-            <div class="about-grid fade-in">
-                <div class="skills-section">
-                    <h3>Technical Skills</h3>
-                    <div class="skill-category">
-                        <h4>Analytics & Visualization</h4>
-                        <div class="skill-list">
-                            <span class="skill-item">Power BI</span>
-                            <span class="skill-item">Tableau</span>
-                            <span class="skill-item">SQL</span>
-                            <span class="skill-item">Python</span>
-                            <span class="skill-item">Google Analytics</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Project Management</h4>
-                        <div class="skill-list">
-                            <span class="skill-item">Asana</span>
-                            <span class="skill-item">Monday</span>
-                            <span class="skill-item">Smartsheet</span>
-                            <span class="skill-item">Scrum/Agile</span>
-                        </div>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Business Applications</h4>
-                        <div class="skill-list">
-                            <span class="skill-item">Salesforce</span>
-                            <span class="skill-item">HubSpot</span>
-                            <span class="skill-item">Microsoft Suite</span>
-                            <span class="skill-item">Google Suite</span>
-                        </div>
+        <section>
+            <h2>Executive Summary</h2>
+            <p>This case study documents the development and validation of a repeatable framework for AI-augmented operational improvement. Using two Progressive Web Applications (PWAs) as a controlled testing environment, I validated a methodology that combines AI capabilities with <strong>Six Sigma discipline</strong> to achieve measurable process improvements while maintaining rigorous quality controls.</p>
+
+            <div class="highlight">
+                <p>The framework addresses a critical organizational challenge: <strong>how to harness emerging AI tools for operational improvement without sacrificing the process discipline that ensures quality outcomes</strong>. The methodology is now ready for application at organizational scale.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>About Me</h2>
+            <p>Data-driven professional with 8+ years of experience in operational excellence across consulting, technology, and government sectors. Proven track record of transforming complex datasets into actionable insights and delivering measurable business outcomes at enterprise scale.</p>
+
+            <h3>Professional Experience</h3>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <h4>Management Analyst 4</h4>
+                    <div class="company">State of Washington</div>
+                    <div class="duration">Oct 2024 - Present</div>
+                    <p>Leading strategic contract migration initiatives and developing comprehensive financial dashboards that optimize vendor agreements worth $15M+. Delivered 70% efficiency improvement in invoice approval cycles through analytical workflow redesign.</p>
+                </div>
+                <div class="experience-card">
+                    <h4>Senior Director, Client Engagement</h4>
+                    <div class="company">MSIGHTS</div>
+                    <div class="duration">Jan 2023 - June 2024</div>
+                    <p>Analyzed complex market datasets to identify strategic opportunities across advertising, pharmaceutical, and QSR verticals for Fortune 500 clients.</p>
+                </div>
+                <div class="experience-card">
+                    <h4>Senior Director, Digital & Search Solutions</h4>
+                    <div class="company">Ebiquity PLC</div>
+                    <div class="duration">Apr 2022 - Jan 2023</div>
+                    <p>Served as product owner analyzing $1.5B in annual advertising spend, developing financial models that identified optimization opportunities for Fortune 100 clients. Led strategic integration of digital solutions following Ebiquity's acquisition of Media Management, Inc., achieving 100% client retention.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Technical Skills</h2>
+
+            <div class="capability-grid">
+                <div class="capability-item">
+                    <h4>Analytics & Visualization</h4>
+                    <p>Power BI, Tableau, SQL, Python, Google Analytics</p>
+                </div>
+                <div class="capability-item">
+                    <h4>Project Management</h4>
+                    <p>Asana, Monday, Smartsheet, Scrum/Agile, Six Sigma DMAIC</p>
+                </div>
+                <div class="capability-item">
+                    <h4>Business Applications</h4>
+                    <p>Salesforce, HubSpot, Microsoft Suite, Google Suite</p>
+                </div>
+                <div class="capability-item">
+                    <h4>Development & Deployment</h4>
+                    <p>React, Vite, Supabase, Vercel, GitHub CI/CD, Serverless Functions</p>
+                </div>
+                <div class="capability-item">
+                    <h4>AI & Automation</h4>
+                    <p>Claude API, OpenAI API, Workflow Automation, Prompt Engineering</p>
+                </div>
+                <div class="capability-item">
+                    <h4>Data & Security</h4>
+                    <p>PostgreSQL, Row-Level Security, Data Migration, ETL Pipelines</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Professional Context</h2>
+            <p>This methodology builds on 8+ years of operational excellence experience across consulting, technology, and government sectors:</p>
+
+            <div class="context-box">
+                <h4>Enterprise Experience Foundation</h4>
+                <ul>
+                    <li><strong>Enterprise Scale:</strong> Managed digital advertising audits across $1.5B in spend for Fortune 500 clients including General Motors, Samsung, AstraZeneca, AbbVie, Honda, and Ross Stores</li>
+                    <li><strong>Process Optimization:</strong> Delivered 70% efficiency improvement in invoice approval cycles at State of Washington through analytical workflow redesign</li>
+                    <li><strong>Post-Acquisition Integration:</strong> Led strategic integration of digital solutions following Ebiquity's acquisition of Media Management, Inc., achieving 100% client retention</li>
+                    <li><strong>Cross-Functional Leadership:</strong> Coordinated stakeholders across LATAM, APAC, EMEA, and North America for global client engagements</li>
+                </ul>
+            </div>
+
+            <p>The PWA projects served as a controlled environment to validate AI-augmented process improvement techniques before applying them in organizational contexts, where the cost of failure is significantly higher.</p>
+        </section>
+
+        <section>
+            <h2>The Framework</h2>
+
+            <h3>Challenge</h3>
+            <p>Organizations face a dilemma with AI tools: move too fast and quality suffers; move too slowly and competitive advantage is lost. The question is not whether to adopt AI, but how to integrate AI capabilities within disciplined operational frameworks that ensure reliable outcomes.</p>
+
+            <h3>Solution: DMAIC-Governed AI Augmentation</h3>
+            <p>The framework applies Six Sigma DMAIC methodology as a governance structure for AI-assisted work:</p>
+            <ul>
+                <li><strong>Define</strong> clear objectives using SMART criteria before any AI-assisted work begins</li>
+                <li><strong>Measure</strong> baseline state and establish quantifiable success metrics</li>
+                <li><strong>Analyze</strong> root causes using structured frameworks (human judgment, AI-assisted research)</li>
+                <li><strong>Improve</strong> through incremental implementation with mandatory verification gates</li>
+                <li><strong>Control</strong> through automated pipelines, monitoring, and sustainability mechanisms</li>
+            </ul>
+
+            <div class="table-wrapper">
+                <table class="dmaic-table">
+                    <thead>
+                        <tr>
+                            <th>Phase</th>
+                            <th>Activities</th>
+                            <th>Outcomes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>DEFINE</td>
+                            <td>Problem statement, SMART objectives, stakeholder requirements, CTQ characteristics</td>
+                            <td>Clear scope, success criteria, measurable targets</td>
+                        </tr>
+                        <tr>
+                            <td>MEASURE</td>
+                            <td>Baseline metrics, KPI definition, data collection systems implementation</td>
+                            <td>Quantified current state, measurement infrastructure</td>
+                        </tr>
+                        <tr>
+                            <td>ANALYZE</td>
+                            <td>Root cause analysis, process bottleneck identification, data-driven insights</td>
+                            <td>Identified improvement opportunities, prioritized solutions</td>
+                        </tr>
+                        <tr>
+                            <td>IMPROVE</td>
+                            <td>Incremental implementation, PDCA cycles, verification checkpoints</td>
+                            <td>Validated solutions, 100% checkpoint success</td>
+                        </tr>
+                        <tr>
+                            <td>CONTROL</td>
+                            <td>Sustainability mechanisms, monitoring, documentation, quality gates</td>
+                            <td>Automated pipelines, zero production defects</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Human-AI Collaboration Model</h3>
+            <p>The framework establishes clear roles that maintain human oversight while maximizing AI capabilities:</p>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Step</th>
+                            <th>Human Role</th>
+                            <th>AI Role</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1. Requirements</td>
+                            <td>Define objectives, constraints, success criteria</td>
+                            <td>Translate to specifications</td>
+                        </tr>
+                        <tr>
+                            <td>2. Architecture</td>
+                            <td>Strategic decisions, risk assessment</td>
+                            <td>Generate options, trade-off analysis</td>
+                        </tr>
+                        <tr>
+                            <td>3. Implementation</td>
+                            <td>Verify, test, approve deployment</td>
+                            <td>Code/content generation</td>
+                        </tr>
+                        <tr>
+                            <td>4. Quality Control</td>
+                            <td>Checkpoint approval, acceptance testing</td>
+                            <td>Automated validation</td>
+                        </tr>
+                        <tr>
+                            <td>5. Iteration</td>
+                            <td>Feedback, direction, course correction</td>
+                            <td>Rapid modifications</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section>
+            <h2>Framework Validation</h2>
+            <p>Two production PWA deployments validated the framework in a controlled environment where rapid iteration was possible and the cost of defects was contained.</p>
+
+            <div class="project-grid">
+                <div class="project-card">
+                    <h4>Habit Tracker PWA</h4>
+                    <p><strong>Problem:</strong> Daily habit tracking required 15 to 20 minutes of manual Google Sheets entry with approximately 5% error rate and no mobile optimization.</p>
+                    <p><strong>Solution:</strong> Mobile-first PWA with real-time schedule display, automated mental health tracking prompts, push notifications, and comprehensive analytics.</p>
+                    <div class="project-metrics">
+                        <span class="project-metric"><strong>50-67%</strong> time reduction</span>
+                        <span class="project-metric"><strong>156</strong> records migrated</span>
+                        <span class="project-metric"><strong>11</strong> tasks, zero failures</span>
                     </div>
                 </div>
-                <div class="experience-summary">
-                    <h3>Professional Experience</h3>
-                    <div class="experience-item">
-                        <div class="experience-title">Management Analyst 4</div>
-                        <div class="experience-company">State of Washington</div>
-                        <div class="experience-duration">Oct 2024 - Present</div>
-                        <div class="experience-description">
-                            Leading strategic contract migration initiatives and developing comprehensive financial dashboards that optimize vendor agreements worth $15M+.
-                        </div>
-                    </div>
-                    <div class="experience-item">
-                        <div class="experience-title">Senior Director, Client Engagement</div>
-                        <div class="experience-company">MSIGHTS</div>
-                        <div class="experience-duration">Jan 2023 - June 2024</div>
-                        <div class="experience-description">
-                            Analyzed complex market datasets to identify strategic opportunities across advertising, pharmaceutical, and QSR verticals for Fortune 500 clients.
-                        </div>
-                    </div>
-                    <div class="experience-item">
-                        <div class="experience-title">Senior Director, Digital & Search Solutions</div>
-                        <div class="experience-company">Ebiquity PLC</div>
-                        <div class="experience-duration">Apr 2022 - Jan 2023</div>
-                        <div class="experience-description">
-                            Served as product owner analyzing $1.5B in annual advertising spend, developing financial models that identified optimization opportunities for Fortune 100 clients.
-                        </div>
+
+                <div class="project-card">
+                    <h4>Family Menu Planner PWA</h4>
+                    <p><strong>Problem:</strong> Weekly menu planning consumed approximately 3 hours, resulted in repetitive meals, and required manual shopping list creation.</p>
+                    <p><strong>Solution:</strong> 4-phase PWA with AI-powered recipe generation, dietary restriction handling, automated shopping lists, and multi-user family collaboration.</p>
+                    <div class="project-metrics">
+                        <span class="project-metric"><strong>~89%</strong> time reduction</span>
+                        <span class="project-metric"><strong><$2</strong> monthly cost</span>
+                        <span class="project-metric"><strong>4-phase</strong> roadmap</span>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Case Studies Section -->
-    <section id="case-studies" class="section">
-        <div class="container">
-            <h2 class="section-title fade-in">Case Studies</h2>
-            <div class="case-studies-grid fade-in">
-                <!-- Case Study 1: Daily Motivation Email -->
-                <div class="case-study-card">
-                    <div class="case-study-header">
-                        <h3 class="case-study-title">Daily Motivation Email Automation</h3>
-                        <p class="case-study-subtitle">Serverless Workflow Automation</p>
-                    </div>
-                    <div class="case-study-content">
-                        <p class="case-study-description">
-                            Designed and implemented a cost-effective, serverless email automation system delivering daily motivational content using modern workflow platforms and AI integration.
-                        </p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Pipedream</span>
-                            <span class="tech-tag">OpenAI API</span>
-                            <span class="tech-tag">Workflow Automation</span>
-                            <span class="tech-tag">Serverless</span>
-                        </div>
-                        <div class="case-study-metrics">
-                            <div class="metric">
-                                <span class="metric-value">100%</span>
-                                <div class="metric-label">Success Rate</div>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">$0</span>
-                                <div class="metric-label">Monthly Cost</div>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">30</span>
-                                <div class="metric-label">Days Active</div>
-                            </div>
-                        </div>
-                        <div class="case-study-actions">
-                            <button class="btn btn-primary" onclick="openCaseStudy('motivation-email')">
-                                <i class="fas fa-eye"></i>
-                                View Details
-                            </button>
-                            <a href="case studies/Daily_Motivation_Case_Study.pdf" target="_blank" class="btn btn-outline">
-                                <i class="fas fa-download"></i>
-                                Download PDF
-                            </a>
-                        </div>
-                    </div>
+            <h3>Key Technical Decisions</h3>
+            <ul>
+                <li><strong>Eliminated build complexity:</strong> Switched from Tailwind CSS to vanilla CSS after configuration issues caused delays (lean thinking: eliminate waste without sacrificing quality)</li>
+                <li><strong>Security architecture:</strong> Implemented Row-Level Security (RLS) policies mid-project after recognizing multi-user potential, ensuring enterprise-grade data isolation</li>
+                <li><strong>API security:</strong> Vercel Serverless Functions proxy all AI requests, ensuring API keys never reach client-side code</li>
+                <li><strong>Quality gates:</strong> Each task required explicit verification before proceeding, resulting in 100% checkpoint success and zero rollbacks</li>
+            </ul>
+
+            <h3>Defect Prevention Strategy</h3>
+            <ul>
+                <li><strong>Poka-Yoke (Error-Proofing):</strong> Verification checkpoints prevent progression until quality confirmed</li>
+                <li><strong>Continuous Integration:</strong> Automated GitHub to Vercel deployment eliminates manual deployment errors</li>
+                <li><strong>Data Validation:</strong> Client-side and database constraints prevent invalid data entry</li>
+            </ul>
+            <p><strong>Result:</strong> Zero production defects across both projects. Two bugs identified during development (timezone handling, navigation UX) were caught and resolved within 24 hours each, never reaching production.</p>
+        </section>
+
+        <section>
+            <h2>Corporate Applications</h2>
+            <p>The validated framework translates directly to organizational operational improvement initiatives:</p>
+
+            <div class="application-grid">
+                <div class="application-card">
+                    <h4>Process Documentation</h4>
+                    <p>AI-assisted creation of SOPs, training materials, and workflow documentation with human review gates</p>
+                    <span class="outcome">60-80% reduction in documentation time</span>
                 </div>
-
-                <!-- Case Study 2: Schedule Optimizer -->
-                <div class="case-study-card">
-                    <div class="case-study-header">
-                        <h3 class="case-study-title">Daily Schedule Optimizer</h3>
-                        <p class="case-study-subtitle">AI-Powered Calendar Integration</p>
-                    </div>
-                    <div class="case-study-content">
-                        <p class="case-study-description">
-                            Automated daily schedule creation combining Google Calendar events with recurring tasks using Python preprocessing, ChatGPT optimization, and HTML email delivery.
-                        </p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Pipedream</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">OpenAI API</span>
-                            <span class="tech-tag">Google Calendar</span>
-                        </div>
-                        <div class="case-study-metrics">
-                            <div class="metric">
-                                <span class="metric-value">100%</span>
-                                <div class="metric-label">Daily Success</div>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">15min</span>
-                                <div class="metric-label">Time Saved</div>
-                            </div>
-                            <div class="metric">
-                                <span class="metric-value">7</span>
-                                <div class="metric-label">Integrations</div>
-                            </div>
-                        </div>
-                        <div class="case-study-actions">
-                            <button class="btn btn-primary" onclick="openCaseStudy('schedule-optimizer')">
-                                <i class="fas fa-eye"></i>
-                                View Details
-                            </button>
-                            <a href="case studies/Daily_Schedule_Optimizer_Case_Study.pdf" target="_blank" class="btn btn-outline">
-                                <i class="fas fa-download"></i>
-                                Download PDF
-                            </a>
-                        </div>
-                    </div>
+                <div class="application-card">
+                    <h4>Operational Dashboards</h4>
+                    <p>Rapid prototyping of executive dashboards with iterative refinement through PDCA cycles</p>
+                    <span class="outcome">Days instead of weeks for delivery</span>
                 </div>
-
-                <!-- Placeholder for future case studies -->
-                <div class="case-study-card" style="opacity: 0.6; border: 2px dashed var(--border-color);">
-                    <div class="case-study-header" style="background: linear-gradient(135deg, #718096, #a0aec0);">
-                        <h3 class="case-study-title">Coming Soon</h3>
-                        <p class="case-study-subtitle">Additional Case Study</p>
-                    </div>
-                    <div class="case-study-content">
-                        <p class="case-study-description">
-                            More detailed case studies showcasing data analysis, process optimization, and strategic planning initiatives will be added here as they are completed.
-                        </p>
-                        <div class="tech-tags">
-                            <span class="tech-tag">Power BI</span>
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">SQL</span>
-                        </div>
-                        <div class="case-study-actions">
-                            <button class="btn btn-outline" disabled>
-                                <i class="fas fa-clock"></i>
-                                In Development
-                            </button>
-                        </div>
-                    </div>
+                <div class="application-card">
+                    <h4>Reporting Automation</h4>
+                    <p>AI-generated report templates with verification checkpoints before stakeholder distribution</p>
+                    <span class="outcome">Consistent quality, reduced manual effort</span>
+                </div>
+                <div class="application-card">
+                    <h4>Workflow Analysis</h4>
+                    <p>AI-assisted process mapping and bottleneck identification with human validation of findings</p>
+                    <span class="outcome">Faster root cause identification</span>
+                </div>
+                <div class="application-card">
+                    <h4>Vendor Evaluation</h4>
+                    <p>AI-augmented research and analysis with structured decision frameworks for final selection</p>
+                    <span class="outcome">More thorough analysis in less time</span>
+                </div>
+                <div class="application-card">
+                    <h4>Training Development</h4>
+                    <p>AI-assisted content creation with subject matter expert review and iterative refinement</p>
+                    <span class="outcome">Accelerated training rollout</span>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section">
-        <div class="container">
-            <h2 class="section-title fade-in">Get In Touch</h2>
-            <div style="text-align: center; background: var(--bg-white); padding: 3rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08);" class="fade-in">
-                <p style="font-size: 1.2rem; margin-bottom: 2rem; color: var(--text-light);">
-                    I'm always interested in discussing new opportunities and challenging projects.
-                </p>
-                <div class="social-links" style="justify-content: center;">
-                    <a href="https://www.linkedin.com/in/corbinbridge/" target="_blank" class="social-link" style="background: var(--primary-color);">
-                        <i class="fab fa-linkedin"></i>
-                        Connect on LinkedIn
-                    </a>
-                    <a href="mailto:cbridge89@gmail.com" class="social-link" style="background: var(--success-color);">
-                        <i class="fas fa-envelope"></i>
-                        Send Email
-                    </a>
+        <section>
+            <h2>Transferable Capabilities</h2>
+
+            <div class="capability-grid">
+                <div class="capability-item">
+                    <h4>Process Design & Optimization</h4>
+                    <p>End-to-end workflow creation, waste elimination, standardization aligned with DMAIC methodology</p>
+                </div>
+                <div class="capability-item">
+                    <h4>Project Management</h4>
+                    <p>Phased planning, risk mitigation, scope management, timeline adherence with verification gates</p>
+                </div>
+                <div class="capability-item">
+                    <h4>Change Management</h4>
+                    <p>Legacy system migration, user adoption strategies, organizational transformation</p>
+                </div>
+                <div class="capability-item">
+                    <h4>Quality Management</h4>
+                    <p>Six Sigma methodology, defect prevention, continuous improvement, statistical process control</p>
+                </div>
+                <div class="capability-item">
+                    <h4>Technology Strategy</h4>
+                    <p>Build vs. buy analysis, stack selection, cost optimization, vendor evaluation</p>
+                </div>
+                <div class="capability-item">
+                    <h4>Data-Driven Decision Making</h4>
+                    <p>KPI definition, baseline measurement, performance monitoring, root cause analysis</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2025 Corbin Bridge. All rights reserved.</p>
+        <section>
+            <h2>Summary</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Habit Tracker</th>
+                            <th>Menu Planner</th>
+                            <th>Framework</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Development Timeline</td>
+                            <td>2-3 weeks</td>
+                            <td>1-2 weeks/phase</td>
+                            <td>Repeatable</td>
+                        </tr>
+                        <tr>
+                            <td>Verification Success Rate</td>
+                            <td>100%</td>
+                            <td>100%</td>
+                            <td>100%</td>
+                        </tr>
+                        <tr>
+                            <td>Production Defects</td>
+                            <td>0</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Monthly Operating Cost</td>
+                            <td>$0</td>
+                            <td><$2</td>
+                            <td>Under budget</td>
+                        </tr>
+                        <tr>
+                            <td>Time Savings</td>
+                            <td>50-67% daily</td>
+                            <td>~89% weekly</td>
+                            <td>Significant</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <h3>Conclusion</h3>
+            <p>This case study demonstrates not just technical capability, but a validated methodology for AI-augmented operational improvement. The framework combines the acceleration potential of AI tools with the process discipline that ensures quality outcomes.</p>
+            <p>Built on 8+ years of enterprise-scale operational experience, the methodology is ready for application to organizational challenges: process documentation, workflow automation, reporting systems, and strategic analysis. The core principle remains constant: <strong>AI augments human judgment; it does not replace the disciplined frameworks that ensure reliable results.</strong></p>
+
+            <blockquote>
+                "The question is not whether AI will transform operations. It is whether organizations have people who can harness AI capabilities within disciplined operational frameworks that ensure reliable outcomes."
+            </blockquote>
+        </section>
+
+        <section>
+            <h2>Technology Stack</h2>
+            <div class="tech-stack">
+                <span class="tech-tag">React 18</span>
+                <span class="tech-tag">Vite 4</span>
+                <span class="tech-tag">Vanilla CSS</span>
+                <span class="tech-tag">Supabase</span>
+                <span class="tech-tag">PostgreSQL 15</span>
+                <span class="tech-tag">Vercel</span>
+                <span class="tech-tag">Serverless Functions</span>
+                <span class="tech-tag">Claude API</span>
+                <span class="tech-tag">GitHub CI/CD</span>
+                <span class="tech-tag">Row-Level Security</span>
+                <span class="tech-tag">PWA</span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p><strong>Corbin Bridge</strong></p>
+        <p>
+            <a href="mailto:cbridge89@gmail.com">cbridge89@gmail.com</a> &nbsp;|&nbsp;
+            (702) 523-5180 &nbsp;|&nbsp;
+            <a href="https://linkedin.com/in/corbinbridge" target="_blank">LinkedIn</a>
+        </p>
     </footer>
-
-    <!-- Modal for Case Study Details -->
-    <div id="case-study-modal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button class="modal-close" onclick="closeCaseStudy()">&times;</button>
-                <h2 id="modal-title">Case Study Details</h2>
-                <p id="modal-subtitle">Detailed breakdown and analysis</p>
-            </div>
-            <div class="modal-body">
-                <iframe id="case-study-iframe" src="" style="width: 100%; height: 600px; border: none; border-radius: 8px;"></iframe>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Fade in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Case Study Modal Functions
-        function openCaseStudy(caseId) {
-    const modal = document.getElementById('case-study-modal');
-    const iframe = document.getElementById('case-study-iframe');
-    const title = document.getElementById('modal-title');
-    const subtitle = document.getElementById('modal-subtitle');
-
-    switch(caseId) {
-        case 'motivation-email':
-            title.textContent = 'Daily Motivation Email Automation';
-            subtitle.textContent = 'Serverless Workflow Implementation';
-            iframe.src = 'case studies/Daily_Motivation_Case_Study.pdf';
-            break;
-        case 'schedule-optimizer':
-            title.textContent = 'Daily Schedule Optimizer';
-            subtitle.textContent = 'AI-Powered Calendar Integration';
-            iframe.src = 'case studies/Daily_Schedule_Optimizer_Case_Study.pdf';
-            break;
-        default:
-            title.textContent = 'Case Study';
-            subtitle.textContent = 'Detailed Analysis';
-            break;
-    }
-
-    modal.style.display = 'block';
-    document.body.style.overflow = 'hidden';
-}
-
-        function closeCaseStudy() {
-            const modal = document.getElementById('case-study-modal');
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
-        // Close modal when clicking outside
-        document.getElementById('case-study-modal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeCaseStudy();
-            }
-        });
-
-        // Close modal with Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeCaseStudy();
-            }
-        });
-
-        // Active navigation highlighting
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('.nav-links a');
-
-            let currentSection = '';
-
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100;
-                const sectionHeight = section.offsetHeight;
-
-                if (window.scrollY >= sectionTop && window.scrollY < sectionTop + sectionHeight) {
-                    currentSection = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + currentSection) {
-                    link.classList.add('active');
-                }
-            });
-        });
-    </script>
 </body>
 </html>
