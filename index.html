@@ -281,6 +281,22 @@
             color: var(--accent);
         }
 
+        .project-cta {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1.25rem;
+            background: var(--accent);
+            color: var(--white);
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        .project-cta:hover {
+            background: var(--accent-light);
+        }
+
         /* Highlight Box */
         .highlight {
             background: linear-gradient(135deg, var(--navy) 0%, var(--navy-dark) 100%);
@@ -795,6 +811,7 @@
                         <span class="project-metric"><strong><$2</strong> monthly cost</span>
                         <span class="project-metric"><strong>4-phase</strong> roadmap</span>
                     </div>
+                    <a href="https://alera.family/" target="_blank" rel="noopener noreferrer" class="project-cta">View Live App →</a>
                 </div>
             </div>
 
